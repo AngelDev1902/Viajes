@@ -63,9 +63,13 @@
 .viaje{
     @include mx.crearFlex(column, space-between);
     min-height: 70rem;
-    width: 35rem;
+    width: 100%;
     background-color: v.$gris-claro;
     border-radius: 1rem;
+
+    @include mx.telefono{
+        width: 35rem;
+    }
 }
 
 .viaje__info{

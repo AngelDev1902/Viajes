@@ -4,6 +4,7 @@ const header = document.querySelector('.header');
 const welcome = document.querySelector('.welcome');
 const headerIndex = 'header-index';
 const header_index = document.querySelector('.header-index');
+const body = document.body;
 
 window.addEventListener('load', () => {
     if(welcome.getBoundingClientRect().bottom < 70){
@@ -15,6 +16,7 @@ window.addEventListener('load', () => {
 
 bar.addEventListener('click', () => {
     nav.classList.toggle('nav-active');
+    body.classList.toggle('body-desactive')
 
     if (header.classList.contains(headerIndex)) {
         if(welcome.getBoundingClientRect().bottom > 70){

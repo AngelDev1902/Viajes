@@ -6,6 +6,10 @@ html{
     font-size: 62.5%;
 }
 
+.body-desactive{
+    overflow: hidden;
+}
+
 *, *::before, *::after{
     box-sizing: inherit;
 }
