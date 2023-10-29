@@ -1,0 +1,16 @@
+@use "../base/mixins" as mx;
+@use "../base/variables" as v;
+
+.nosotros{
+    display: grid;
+    gap: 3rem;
+    place-items: center;
+
+    @include mx.desktop {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.nosotros-info{
+    font-size: 2rem;
+}

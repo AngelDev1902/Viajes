@@ -1,0 +1,127 @@
+@use "../base/mixins" as mx;
+@use "../base/variables" as v;
+
+.header{
+    width: 100%;
+    background-color: v.$gris;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    .navegacion{
+        @include mx.container;
+        height: 100%;
+
+        @include mx.desktop {
+            @include mx.crearFlex(row, space-between);
+        }
+    }
+}
+
+.navegacion__logo{
+    @include mx.crearFlex(row, center, center);
+    position: relative;
+    padding: 1rem 0;
+
+    .bar{
+        position: absolute;
+        left: 0;
+
+        @include mx.desktop {
+            display: none;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        i{
+            font-size: 3rem;
+            color: white;
+        }
+    }
+
+    a{
+        img{
+            max-height: 5rem;
+            width: auto;
+        }
+    }
+}
+
+.nav{
+    height: calc(100vh - 7rem);
+    width: 100%;
+    padding: 5rem 0;
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    background-color: v.$gris;
+    clip-path: circle(0% at top left);
+    transition: clip-path 1s ease;
+
+    @include mx.telefono {
+        width: 40rem
+    }
+
+    @include mx.desktop {
+        width: 60%;
+        position: relative;
+        @include mx.crearFlex(row, space-between);
+        height: auto;
+        padding: 0;
+        top: 0;
+        left: 0;
+        clip-path: none;
+    }
+
+    @include mx.desktopXL {
+        width: 50%;
+    }
+
+    .nav__links{
+        @include mx.crearFlex(row, center, center);
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 700;
+        width: 50%;
+        margin: 0 auto;
+        height: 10rem;
+        text-align: center;
+        position: relative;
+
+        @include mx.desktop {
+            height: auto;
+        }
+
+        &::after{
+            content: "";
+            width: 0;
+            height: 2px;
+            background-color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width 0.5s ease;
+        }
+
+        &:hover{
+            &::after{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.nav-active{
+    clip-path: circle(150% at top left);
+}
+
+.header-index{
+    background-color: transparent;
+
+    .nav{
+        background-color: transparent;
+    }
+}

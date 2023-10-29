@@ -1,0 +1,52 @@
+@use "../base/mixins" as mx;
+@use "../base/variables" as v;
+
+.no-webp .welcome{
+    background-image: url("../img/fondo3.jpg");
+}
+
+.webp .welcome{
+    background-image: url("../img/fondo3.webp");
+}
+
+.welcome{
+    min-height: 50rem;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+
+    @include mx.desktop {
+        min-height: 70rem;
+    }
+
+    .welcome__container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: v.$obscurecer;  
+        @include mx.crearFlex(column, flex-end, flex-start);
+
+        .welcome__title{
+            margin: 3rem;
+            color: white;
+            font-size: 4rem;
+            font-weight: 900;
+            max-width: 35rem;
+            text-align: left;
+
+            @include mx.tablet {
+                margin: 8rem 15rem;
+                font-size: 5rem;
+            }
+
+            @include mx.desktop {
+                font-size: 6rem;
+                max-width: 50rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@use "../base/mixins" as mx;
+@use "../base/variables" as v;
+
+.footer{
+    background-color: v.$gris;
+    padding: 2rem 0;
+}
+
+.footer__logo{
+    @include mx.centrarFlex;
+    margin-bottom: 3rem;
+
+    img{
+        width: auto;
+        max-height: 7rem;
+    }
+}
+
+.footer__nav{
+    display: flex;
+    @include mx.container;
+    justify-content: space-evenly;
+    max-width: 80rem;
+
+    a{
+        color: white;
+    }
+}

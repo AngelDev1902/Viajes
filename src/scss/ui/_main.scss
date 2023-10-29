@@ -1,0 +1,264 @@
+@use "../base/mixins" as mx;
+@use "../base/variables" as v;
+
+.main{
+    @include mx.container;
+    padding: 7rem 0;
+}
+
+.iconos-container{
+    display: grid;
+    column-gap: 5%;
+    place-items: center;
+
+    @include mx.desktop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.icono{
+    @include mx.crearFlex(column, flex-start, center);
+    width: 100%;
+    min-height: 40rem;
+    max-width: 40rem;
+    margin: 0;
+
+    i{
+        font-size: 10rem;
+        color: v.$naranja;
+    }
+
+    h3{
+        margin: 5rem 0;
+        font-size: 2rem;
+    }
+
+    p{
+        font-size: 2rem; 
+        margin: 0;  
+        text-align: justify;
+    }
+}
+
+.viajes{
+    display: flex;
+    flex-direction: column;
+}
+
+.viajes-container{
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    padding-top: 5rem;
+
+    @include mx.tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include mx.desktopXL {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+.viaje{
+    @include mx.crearFlex(column, space-between);
+    min-height: 70rem;
+    width: 35rem;
+    background-color: v.$gris-claro;
+    border-radius: 1rem;
+}
+
+.viaje__info{
+    img{
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        height: 22rem;
+        object-fit: cover;
+    }
+
+    h3{
+        padding: 0 1.5rem;
+        font-weight: 400;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    p{
+        padding: 1.5rem;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .paquete{
+        padding: 1rem 1.5rem;
+        width: 100%;
+        @include mx.crearFlex(row, space-evenly);
+
+        i{
+            font-size: 3rem;
+        }
+    }
+}
+
+.viaje__precio{
+    border-top: 1px solid v.$gris;
+    padding: 0 1.5rem 1rem;
+
+    p{
+        font-size: 1.5rem;
+        color: v.$gris;
+
+        span{
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: v.$verde;
+        }
+    }
+}
+
+.btn-viajes{
+    display: inline-block;
+    margin: 2rem 0 2rem auto;
+}
+
+.reservar-btn{
+    display: block;
+    width: 80%;
+    margin: 1rem auto 2rem;
+    text-align: center;
+    background-color: v.$naranja;
+
+    &:hover{
+        background-color: darken(v.$naranja, 8%);
+    }
+}
+
+.no-webp .panelContacto{
+    background-image: url("../img/fondo2.jpg");
+}
+
+.webp .panelContacto{
+    background-image: url("../img/fondo2.webp");
+}
+
+.panelContacto{
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.panelContacto-container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 1rem 0;
+    background-color: v.$obscurecer;
+
+    h2, p{
+        color: white;
+        text-align: center;
+    }
+
+    .panelContacto-btn{
+        margin: 3rem 0;
+        background-color: lighten(v.$naranja, 2%);
+
+        &:hover{
+            background-color: darken(v.$naranja, 5%);
+        }
+    }
+}
+
+.extras{
+    padding-top: 40rem;
+    display: grid;
+    gap: 3rem;
+
+    @include mx.desktop {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.blogs-container{
+    display: grid;
+    gap: 3rem;
+}
+
+.blog{
+    display: grid;
+    gap: 2rem;
+    place-items: center;
+
+    @include mx.tablet{
+        grid-template-columns: 1fr 2fr;
+    }
+
+    &__img{
+        a{
+            display: block;
+        }
+    }
+
+    &__info{
+        width: 100%;
+
+        h4{
+            margin: 0;
+            color: black;
+
+            &::after{
+                content: '';
+                height: 4px;
+                width: 20rem;
+                background-color: v.$verde;
+                display: block;
+                margin-top: 1rem;
+            }
+        }
+
+        .escrito{
+            margin: 3rem 0;
+        }
+
+        span{
+            color: v.$naranja;
+            font-weight: 700;
+        }
+    }
+}
+
+.testimoniales-container{
+    background-color: v.$verde;
+    border-radius: 3rem;
+    width: 100%;
+    max-width: 37rem;
+    padding: 2rem 3rem;
+    margin: 0 auto;
+    font-size: 2.2rem;
+    color: white;
+
+    blockquote{
+        padding-left: 5rem;
+        position: relative;
+
+        &::before{
+            content: '';
+            background-image:url('../img/comillas.svg');
+            width: 6rem;
+            height: 8rem;
+            display: block;
+            position: absolute;
+            left: -2rem;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    p{
+        text-align: end;
+    }
+}

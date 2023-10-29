@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes A cualquier destino</title>
+    <link rel="shortcut icon" href="build/img/minLogo.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://kit.fontawesome.com/81f690b610.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="build/css/app.css">
+</head>
+<body>
+    <header class="header">
+        <div class="navegacion">
+            <div class="navegacion__logo">
+                <div class="bar" id="bar">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <a href="index.html"><img src="build/img/logo.svg" alt=""></a>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav__links">Inicio</a>
+                <a href="viajes.html" class="nav__links">Viajes</a>
+                <a href="blog.html" class="nav__links">Blog</a>
+                <a href="nosotros.html" class="nav__links">Nosotros</a>
+                <a href="contacto.html" class="nav__links">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <h2>Escribenos y con gusto te atenderemos</h2>
+
+        <div class="contacto-container">
+            <div class="contacto__img">
+                <picture>
+                    <source srcset='build/img/contacto.avif' type='image/avif'>
+                    <source srcset='build/img/contacto.webp' type='image/webp'>
+                    <img loading='lazy' src='build/img/contacto.jpg' alt='imagen 1'>
+                </picture>
+            </div>
+
+            <form action="" class="formulario">
+                <fieldset>
+                    <legend>Datos personales</legend>
+
+                    <div class="campo">
+                        <label for="nombre" >Nombre:</label>
+                        <input type="text" placeholder="Jose Antonio" id="nombre">
+                    </div>
+
+                    <div class="campo">
+                        <label for="apellidos" >Apellidos:</label>
+                        <input type="text" placeholder="Martínez Sánchez" id="apellidos">
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo" >Correo:</label>
+                        <input type="email" placeholder="usuario@gmail.com" id="correo">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefono" >Telefono:</label>
+                        <input type="tel" placeholder="5588745132" id="telefono">
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensaje" >Mensaje:</label>
+                        <textarea name="mensaje" id="mensaje"></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Datos del viaje</legend>
+
+                    <div class="campo">
+                        <label for="opciones">Ingrese su destino deseado:</label>
+                        <select id="opciones">
+                            <option selected disabled>-- Seleccionar --</option>
+                            <option value="cabos">Los Cabos</option>
+                            <option value="cancun">Cancún</option>
+                            <option value="veracruz">Veracruz</option>
+                            <option value="cdmx">CDMX</option>
+                            <option value="acapulco">Acapulco</option>
+                            <option value="vallarta">Puerto Vallarta</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="cantidad">Ingrese la cantidad de boletos:</label>
+                        <input type="number">
+                    </div>
+
+                    <div class="total">
+                        <p>El total de la compra es de: </p>
+                        <p class="precio-total" id="precio-total">$5000</p>
+                    </div>
+                </fieldset>
+
+                <input type="submit" value="Finalizar Compra" class="btn contacto-btn">
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__logo">
+            <a href="index.html"><img src="build/img/minLogo.svg" alt=""></a>
+        </div>
+        <nav class="footer__nav">
+            <a href="viajes.html" class="nav__links">Viajes</a>
+            <a href="blog.html" class="nav__links">Blog</a>
+            <a href="nosotros.html" class="nav__links">Nosotros</a>
+            <a href="contacto.html" class="nav__links">Contacto</a>
+        </nav>
+    </footer>
+
+    <script src="build/js/modernizr-custom.js"></script>
+    <script src="build/js/app.js"></script>
+</body>
+</html>

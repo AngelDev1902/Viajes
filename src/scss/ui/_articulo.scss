@@ -1,0 +1,38 @@
+@use "../base/mixins" as mx;
+@use "../base/variables" as v;
+
+.articuloBlog-container{
+    display: grid;
+    gap: 5rem;
+    place-items: center;
+
+    @include mx.desktopXL {
+        grid-template-areas: 
+        "imagen1 imagen1 texto1 texto1 texto1"
+        "texto2 texto2 texto2 imagen2 imagen2";
+    }
+}
+
+@include mx.desktopXL {
+    .articulo-img1{
+        grid-area: imagen1;
+    }
+    
+    .articulo-img2{
+        grid-area: imagen2;
+    }
+    
+    .articulo-info1{
+        grid-area: texto1;
+    }
+    
+    .articulo-info2{
+        grid-area: texto2;
+    }
+}
+
+.articulo-info1, .articulo-info2{
+    p{
+        font-size: 1.8rem;
+    }
+}

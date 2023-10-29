@@ -1,0 +1,1 @@
+.nosotros{display:grid;gap:3rem;place-items:center}@media (min-width:992px){.nosotros{grid-template-columns:repeat(2,1fr)}}.nosotros-info{font-size:2rem}
