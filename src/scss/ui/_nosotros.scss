@@ -5,12 +5,61 @@
     display: grid;
     gap: 3rem;
     place-items: center;
+    font-family: v.$fuente2;
 
-    @include mx.desktop {
-        grid-template-columns: repeat(2, 1fr);
+    @include mx.desktop{
+        grid-template-areas:
+            "imagen imagen imagen imagen"
+            "iconos info info info"
+            "iconos info info info";
+        gap: 5rem;
+    }
+}
+
+.nosotros-img{
+    width: 100%;
+    max-height: 60rem;
+
+    img{
+        max-height: 60rem; 
+        object-fit: cover;
+    }
+
+    @include mx.desktop{
+        grid-area: imagen;
     }
 }
 
 .nosotros-info{
     font-size: 2rem;
+    align-self: start;
+
+    @include mx.desktop{
+        grid-area: info;
+    }
+
+    img{
+        height: 30rem;
+        object-fit: cover;
+        margin-top: 3rem;
+    }
+
+    p{
+        font-weight: 300;
+    }
+}
+
+.nosotros-iconos{
+    font-size: 2rem;
+    font-family: v.$fuente2;
+    font-weight: 300;
+
+    @include mx.desktop{
+        grid-area: iconos;
+    }
+
+    .iconos-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
 }
